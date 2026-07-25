@@ -11,7 +11,7 @@ app.use(express.json())
 
 app.use(cookieParser())
 
-app.get("/", (res, res) =>{
+app.get("/", (req, res) =>{
     res.send("VaultPay Service is up and running")
 })
 
