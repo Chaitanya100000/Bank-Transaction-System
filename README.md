@@ -208,7 +208,7 @@ POST /transaction/transfer
 
 ## 👨‍💻 Author
 
-**Chaitanya Takle**
+**Chaitanya Takale**
 
 - GitHub: https://github.com/Chaitanya100000
 
