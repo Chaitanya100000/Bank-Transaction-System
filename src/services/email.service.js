@@ -59,6 +59,53 @@ The VaultPay Team`;
   await sendEmail(userEmail, subject, text, html);
 }
 
+async function sendTransactionEmail(userEmail, name, amount, toAccount) {
+  const subject = "Transaction Successful!";
+
+  const text = `Hello ${name},
+
+Your transaction has been completed successfully.
+
+Transaction Details:
+- Amount: $${amount}
+- Recipient Account: ${toAccount}
+- Status: SUCCESSFUL
+
+The amount has been transferred successfully.
+
+Thank you for choosing VaultPay.
+
+Best Regards,
+The VaultPay Team`;
+
+  await sendEmail(userEmail, subject, text, html);
+}
+
+async function sendTransactionFailureEmail(userEmail, name, amount, toAccount) {
+  const subject = "Transaction Failed";
+
+  const text = `Hello ${name},
+
+We regret to inform you that your transaction could not be completed.
+
+Transaction Details:
+- Amount: $${amount}
+- Recipient Account: ${toAccount}
+- Status: FAILED
+
+No amount has been deducted from your account.
+
+If you did not initiate this transaction or continue to experience issues, please contact our support team.
+
+Thank you for choosing VaultPay.
+
+Best Regards,
+The VaultPay Team`;
+
+  await sendEmail(userEmail, subject, text, html);
+}
 module.exports = {
   sendRegistrationEmail,
+  sendTransactionEmail,
+  sendTransactionFailureEmail
 };
